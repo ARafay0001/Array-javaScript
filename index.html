@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays-Login</title>
+</head>
+<body>
+    <script>
+        var accounts = +prompt('How many accounts do you want to create? Max 5!!');
+        var email = [];
+        var password = [];
+        
+        for (var i = 1; i <= accounts; i++) {
+            email.push(prompt('Enter the Email or UserName ' + i))
+            password.push(prompt('Enter the Password ' + i))
+        };
+        alert('Accouts Created Successfully Proceed to Login!!!');
+
+        var loginEmail = prompt('Enter Email or userName to Login');
+        var loginPassword = prompt('Enter Email or userName to Login');
+        var excess = false;
+        var accountsNo = 0;
+        for (var i = 0; i <= email.length; i++) {
+            if (loginEmail === email[i] && loginPassword === password[i]) {
+                excess = true;
+                accountsNo++;
+            }
+        }
+        if (excess == true) {
+            document.write('User ' + email[accountsNo] + ' login Successfully' )
+        } else {
+            document.write('Check your email and password or try again')
+        }
+
+    </script>
+</body>
+</html>
